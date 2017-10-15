@@ -55,10 +55,16 @@ passwords:
 
 ## Operation
 
+Clone the source code from git and install via pip.
+
+```
+pip install -e python-password-sprayer
+```
+
 Run the script with:
 
 ```
-python spray.py 
+python -m password_sprayer
 
 ```
 

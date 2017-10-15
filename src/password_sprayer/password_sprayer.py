@@ -1,4 +1,3 @@
-
 import requests
 import json
 import yaml
@@ -115,9 +114,3 @@ class PasswordSprayer():
         
         invalid_logins_doc = file('invalid_users.yaml', 'w')
         yaml.dump(self.invalid_logins, invalid_logins_doc, default_flow_style=False)
-
-
-
-if __name__ == "__main__":
-    password_sprayer = PasswordSprayer()
- 
