@@ -21,21 +21,21 @@ class PasswordSprayer():
     response_key = ""
     valid_response = ""
 
-    def __init__(self):
+    def __init__(self, yaml_config):
         """
         Kick off the application
         """
-        self.load_yaml()
+        self.load_yaml(yaml_config)
         self.load_params()
         self.dump_yaml_output()
 
 
-    def load_yaml(self):
+    def load_yaml(self, yaml_config):
         """"
         Load params from
         a YAML document
         """
-        opendoc = open("users.yaml", "r")
+        opendoc = open(yaml_config, "r")
         self.yamldump = yaml.load_all(opendoc)
 
 
