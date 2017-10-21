@@ -23,7 +23,9 @@ The input params should be:
 * url - the target URL
 * user_field - The name of the user input field the API accepts
 * password_field - The name of the password input field 
+* methods - a list of request methods to use
 * data - a list of other parameters that may be required by the API/App
+* proxies - a list of proxies to be used
 * response - used for recording the response field parameters that indiciate a valid login
 * response_key - nested under response and used for the key to check for a valid/invalid message
 * valid_response - nested under response, the value returned that confirm the a successful login.
@@ -37,7 +39,17 @@ url: "http://some.website/api/v1/login"
 user_field: "userName"
 password_field: "passWord"
 
+methods:
+- POST
+- GET
+- PUT
+
 data: null
+
+proxies:
+  http: "http://127.0.0.1:5000"
+  https: "https://127.0.0.1:5000"
+  ftp: "ftp://127.0.0.1:5000"
 
 response:
     response_key: message
