@@ -23,5 +23,5 @@ jobs:
       - run: wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.2.0.1227-linux.zip
       - run: unzip sonar-scanner-cli-3.2.0.1227-linux.zip
       - run: echo "sonar.host.url=https://sonarcloud.io/" > sonar-scanner-3.2.0.1227-linux/conf/sonar-scanner.properties
-      - run: sonar-scanner 
+      - run: sonar-scanner-3.2.0.1227-linux/bin/sonar-scanner
       - run: echo "Scan complete, data sent to sonarcloud" 
