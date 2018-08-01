@@ -19,16 +19,9 @@ jobs:
 
     steps:
       - checkout 
-      - run: mkdir -p my_workspace
-      - persist_to_workspace:
-          root: my_workspace
-      - run: echo "Attaching workspace"
-      - attach_workspace:
-          at: my_workspace
       - run: echo "Starting SonarQube scan"
-      - run: |
-          wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.2.0.1227-linux.zip
-          unzip sonar-scanner-cli-3.2.0.1227-linux.zip
-          cat "sonar.host.url=https://sonarcloud.io/" >> conf/sonar-scanner.properties
-          sonar-scanner 
+      - run: wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.2.0.1227-linux.zip
+      - run: unzip sonar-scanner-cli-3.2.0.1227-linux.zip
+      - run: cat "sonar.host.url=https://sonarcloud.io/" >> ./conf/sonar-scanner.properties
+      - run: sonar-scanner 
       - run: echo "Scan complete, data sent to sonarcloud" 
