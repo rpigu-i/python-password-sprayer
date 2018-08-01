@@ -19,3 +19,8 @@ jobs:
 
     steps:
       - checkout 
+      - run: |
+          wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.2.0.1227-linux.zip
+          unzip sonar-scanner-cli-3.2.0.1227-linux.zip
+          cat "sonar.host.url=https://sonarcloud.io/" >> /conf/sonar-scanner.properties
+          sonar-scanner
