@@ -35,7 +35,7 @@ class PasswordSprayer():
         a YAML document
         """
         opendoc = open(yaml_config, "r")
-        self.yamldump = yaml.load_all(opendoc)
+        self.yamldump = yaml.load_all(opendoc, Loader=yaml.FullLoader)
 
     def load_params(self):
         """
