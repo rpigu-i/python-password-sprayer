@@ -3,11 +3,11 @@ from setuptools import setup, find_packages
 
 setup(
     name='password-sprayer',
-    version='0.0.1',
+    version='3.0.0',
     description='Simple password sprayer written in Python',
-    maintainer='@patamechanix',
+    maintainer='https://github.com/rpigu-i',
     license='MIT',
-    url='https://github.com/patamechanix/python-password-sprayer',
+    url='https://github.com/rpigu-i/python-password-sprayer',
     package_dir={'': 'src'},
     include_package_data=True,
     packages=find_packages('src'),
