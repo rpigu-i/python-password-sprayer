@@ -106,23 +106,23 @@ class PasswordSprayer():
 
                 r = requestMethod(**req_params)
 
-                print "\nTrying password " + str(p)
-                print "For user " + str(u)
+                print ("\nTrying password " + str(p))
+                print ("For user " + str(u))
 
                 dictdata = json.loads(r.text)
 
                 if dictdata[self.response_key] == self.valid_response:
 
-                    print "Method is: " + method.upper()
-                    print "Status code is: "+str(r.status_code)
-                    print "Response message is: "+str(r.reason)
-                    print "Valid password: "+p
+                    print ("Method is: " + method.upper())
+                    print ("Status code is: "+str(r.status_code))
+                    print ("Response message is: "+str(r.reason))
+                    print ("Valid password: "+p)
                     self.valid_logins[method]['users_pwd'].append(
                         {'user': u, 'password': p})
                     break
 
                 else:
-                    print "Response message is: "+str(dictdata[self.response_key])
+                    print ("Response message is: "+str(dictdata[self.response_key]))
                     self.invalid_logins[method]['users_pwd'].append(
                         {'user': u, 'password': p})
 
