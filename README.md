@@ -2,6 +2,8 @@
 
 Simple password sprayer written in Python
 
+This is the Python 2.7.3 version of the code base.
+
 The following tool can be used to test one or more passwords
 against multiple user accounts. 
 
